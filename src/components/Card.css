@@ -1,0 +1,48 @@
+.Card {
+  width: 300px;
+  border-radius: 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid rgb(226, 226, 226);
+  background-color: rgb(248, 248, 248);
+  transition: 1s;
+}
+
+.estado {
+  text-align: left;
+  color: red;
+}
+
+.containerInCard {
+  display: flex;
+  gap: 20px;
+}
+
+.columna {
+  flex-basis: 50%; /* Cada columna ocupará el 50% del contenedor */
+  box-sizing: border-box; /* Para incluir el padding y borde dentro del ancho */
+}
+
+.estado {
+  text-align: right;
+}
+
+.Card:hover {
+  transform: scale(1.05);
+  transition: 1s;
+}
+
+.delete-button {
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.delete-button:hover {
+  background-color: #cc0000;
+}
