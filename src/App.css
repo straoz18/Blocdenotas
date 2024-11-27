@@ -8,3 +8,10 @@
 .App h1 {
   text-align: center;
 }
+
+
+.boton-anadir {
+
+  display: block;
+  margin: 40px auto;
+}

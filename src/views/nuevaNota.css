@@ -1,0 +1,44 @@
+.nuevanotavista {
+  display: block;
+  width: 1200px;
+  margin:auto;
+  padding-top: 20px;
+
+}
+
+.formnuevanota {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formnuevanota textarea,
+input,
+select {
+  background-color: rgb(236, 236, 236);
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  color: black;
+}
+
+.option2 {
+  width: 50%;
+}
+
+.opciones {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.volver {
+  padding: 10px;
+  
+}
+
+img {
+  max-width:500px ;
+  display: block;
+  padding: 20px 0px;
+}

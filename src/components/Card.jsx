@@ -6,7 +6,19 @@ function Card({
   description = "Descripción aqui",
   fecha = "20/10/23",
   prioridad = "Alta",
+  estado = " ",
 }) {
+  // Función para limpiar el HTML y limitar caracteres
+  const limpiarYLimitarTexto = (texto) => {
+    // Crear un elemento temporal para decodificar el HTML
+    const temp = document.createElement('div');
+    temp.innerHTML = texto;
+    // Obtener el texto sin HTML
+    const textoLimpio = temp.textContent || temp.innerText;
+    // Retornar los primeros 20 caracteres
+    return textoLimpio.substring(0, 20) + (textoLimpio.length > 20 ? '...' : '');
+  };
+
   const handleDelete = () => {
     // Obtener las notas del localStorage
     const notasGuardadas = JSON.parse(localStorage.getItem("notas")) || [];
@@ -23,20 +35,30 @@ function Card({
 
   return (
     <div className="Card">
-      <p className="estado">Estado:</p>
+      <p className="estado">Estado: {estado} </p>
       <Link to={title}>
-        {" "}
-        <h2>{title}</h2>{" "}
+        <h2>{title}</h2>
       </Link>
-      <p>{description}</p>
+      <p>{limpiarYLimitarTexto(description)}</p>
 
       <div className="containerInCard">
         <p className="fecha columna">Fecha: {fecha}</p>
         <p className="prioridad columna">Prioridad: {prioridad}</p>
       </div>
-      <button onClick={handleDelete} className="delete-button">
-        Eliminar nota
-      </button>
+      <div className="button-container">
+        <button 
+          onClick={() => window.location.href = `/editar/${title}`} 
+          className="edit-button"
+        >
+          Modificar nota
+        </button>
+        <button 
+          onClick={handleDelete} 
+          className="delete-button"
+        >
+          Eliminar nota
+        </button>
+      </div>
     </div>
   );
 }

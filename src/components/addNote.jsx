@@ -8,7 +8,7 @@ function AddNote() {
     navigate("/nueva-nota"); // Redirige a la ruta de creación de notas
   };
 
-  return <button onClick={handleCreateNote}>Crear Nueva Nota</button>;
+  return <button className="boton-anadir"  onClick={handleCreateNote}>Crear Nueva Nota</button>;
 }
 
 export default AddNote;

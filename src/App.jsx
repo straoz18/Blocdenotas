@@ -20,7 +20,8 @@ function App() {
         title={v.titulo}
         description={v.contenido}
         fecha={v.fecha}
-        prioridad={v.estado}
+        estado={v.estado}
+        prioridad={v.prioridad}
       />
     );
   });
